@@ -6,9 +6,9 @@ import classes from "./UsersList.module.css";
 const UsersList = (props) => {
   const { users } = props;
   const userListItems = users.map((user) => (
-    <li>
-      {user.name}
-      {user.age}
+    <li key={user.id}>
+      <span>{user.name}</span>
+      <span>{user.age}</span>
     </li>
   ));
 

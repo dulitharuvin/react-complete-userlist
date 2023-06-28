@@ -5,8 +5,7 @@ import UsersList from "./components/Users/UsersList";
 function App() {
   const [usersList, setUsersList] = useState([]);
 
-  const userAdded = (user) => {
-    console.log(JSON.stringify(user));
+  const addUserHandler = (user) => {
     setUsersList((prevUsers) => {
       return [...prevUsers, user];
     });
@@ -14,7 +13,7 @@ function App() {
 
   return (
     <div>
-      <AddUser onAddUser={userAdded} />
+      <AddUser onAddUser={addUserHandler} />
       {usersList.length > 0 && <UsersList users={usersList} />}
     </div>
   );
