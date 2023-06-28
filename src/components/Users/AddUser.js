@@ -18,7 +18,7 @@ const AddUser = (props) => {
       return;
     }
     const newUser = {
-      username: enteredUsername,
+      name: enteredUsername,
       age: enteredAge,
     };
 
