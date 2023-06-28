@@ -5,15 +5,15 @@ import Card from "../UI/Card";
 import Button from "../UI/Button";
 
 const ErrorModal = (props) => {
-  const { title, message, onOkay } = props;
+  const { title, message, onConfirm } = props;
 
-  const okHandler = () => {
-    onOkay();
+  const onConfirmHandler = () => {
+    onConfirm();
   };
 
   return (
     <div>
-      <div className={classes.backdrop}></div>
+      <div className={classes.backdrop} onClick={onConfirmHandler}></div>
       <Card className={classes.modal}>
         <header className={classes.header}>
           <h2>{title}</h2>
@@ -22,7 +22,7 @@ const ErrorModal = (props) => {
           <p>{message}</p>
         </div>
         <footer className={classes.actions}>
-          <Button onClick={okHandler}>Okay</Button>
+          <Button onClick={onConfirmHandler}>Okay</Button>
         </footer>
       </Card>
     </div>

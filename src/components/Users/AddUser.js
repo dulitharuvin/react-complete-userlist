@@ -49,7 +49,7 @@ const AddUser = (props) => {
     setEnteredAge(event.target.value);
   };
 
-  const okayHandler = () => {
+  const errorHandler = () => {
     setError(null);
   };
 
@@ -59,7 +59,7 @@ const AddUser = (props) => {
         <ErrorModal
           title={error.title}
           message={error.message}
-          onOkay={okayHandler}
+          onConfirm={errorHandler}
         />
       )}
 
